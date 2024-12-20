@@ -18,25 +18,14 @@ export default defineConfig({
 
                 icons: [
                     {
-                        src: "./public/icons/apple-touch-icon-60x60.png",
+                        src: "icons/apple-touch-icon-60x60.png",
                         sizes: "60x60",
                         type: "image/png",
                     },
                     {
-                        src: "pwa-192x192.png",
+                        src: "icons/apple-touch-icon-152x152.png",
                         sizes: "192x192",
                         type: "image/png",
-                    },
-                    {
-                        src: "pwa-512x512.png",
-                        sizes: "512x512",
-                        type: "image/png",
-                    },
-                    {
-                        src: "maskable-icon-512x512.png",
-                        sizes: "512x512",
-                        type: "image/png",
-                        purpose: "maskable",
                     },
                 ],
             },
