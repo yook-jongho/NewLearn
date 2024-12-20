@@ -1,15 +1,58 @@
+import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
-    build: {
-        rollupOptions: {
-            input: {
-                main: "./index.html",
-                sw: "./sw.js",
+    plugins: [
+        react(),
+        VitePWA({
+            registerType: "autoUpdate",
+            injectRegister: false,
+
+            manifest: {
+                name: "newlearn",
+                short_name: "newlearn",
+                description: "어려운 뉴스 기사를 쉽고 빠르게",
+                theme_color: "#ffffff",
+
+                icons: [
+                    {
+                        src: "./public/icons/apple-touch-icon-60x60.png",
+                        sizes: "60x60",
+                        type: "image/png",
+                    },
+                    {
+                        src: "pwa-192x192.png",
+                        sizes: "192x192",
+                        type: "image/png",
+                    },
+                    {
+                        src: "pwa-512x512.png",
+                        sizes: "512x512",
+                        type: "image/png",
+                    },
+                    {
+                        src: "maskable-icon-512x512.png",
+                        sizes: "512x512",
+                        type: "image/png",
+                        purpose: "maskable",
+                    },
+                ],
             },
-        },
-    },
+
+            workbox: {
+                globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
+                cleanupOutdatedCaches: true,
+                clientsClaim: true,
+            },
+
+            devOptions: {
+                enabled: false,
+                navigateFallback: "index.html",
+                suppressWarnings: true,
+                type: "module",
+            },
+        }),
+    ],
 });
