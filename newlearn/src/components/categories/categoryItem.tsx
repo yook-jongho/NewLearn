@@ -5,7 +5,7 @@ type CategoryItemProps = {
   id: number; // 카테고리 ID
 };
 
-const CategoryItem: React.FC<CategoryItemProps> = ({ name, id }) => {
+const CategoryItem: React.FC<CategoryItemProps> = ({ name }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handleClick = () => {
@@ -15,7 +15,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ name, id }) => {
   return (
     <div
       onClick={handleClick}
-      className={`px-4 py-2 rounded-[20px] shadow-sm text-center cursor-pointer transition duration-200 
+      className={`w-fit h-fit px-4 py-2 rounded-[20px] shadow-sm text-center cursor-pointer transition duration-200 flex-shrink-0
             ${
               isSelected
                 ? 'bg-[#83AEF7] text-white font-semibold'

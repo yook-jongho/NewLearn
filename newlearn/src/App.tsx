@@ -1,12 +1,12 @@
 import './App.css';
-import CategoryLayout from './components/categories/categoryLayout';
+import HomePage from './pages/HomePage.tsx';
 
 function App() {
   return (
     <>
-      <div className="h-screen flex items-center justify-center">
+      <div className="w-screen h-screen flex-col p-4">
         <div className=" w-100px h-100px bg-black"></div>
-        <CategoryLayout />
+        <HomePage />
       </div>
     </>
   );
