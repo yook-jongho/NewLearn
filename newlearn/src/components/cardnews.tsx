@@ -20,7 +20,9 @@ const Cardnews = ({ thumbnail, title, time, agency }: CardNews) => {
         <div className="p-2">
           <span className="inline-block mb-2">{title}</span>
           <div>
-            <span>{time}</span>, <span>{agency}</span>
+            <span className="text-xs text-gray-600">
+              {time}, {agency}
+            </span>
           </div>
         </div>
         <Arrow className="w-8 h-8" />
