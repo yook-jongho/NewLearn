@@ -1,6 +1,6 @@
 import Cardnews from '../../components/cardnews';
 import Carousel from '../../components/carousel/carousel';
-import CategoryLayout from '../../components/categories/categoryLayout';
+import NavigationBar from '../../components/navigationbar';
 import Header from './Header';
 
 const HomePage = () => {
@@ -38,6 +38,7 @@ const HomePage = () => {
           />
         </section>
       </main>
+      <NavigationBar />
     </div>
   );
 };
