@@ -26,18 +26,18 @@ const HomePage = () => {
   ];
   return (
     <div className="w-full h-full flex flex-col gap-5">
-      <Header />
-      <main className="w-full h-4/5 flex flex-col gap-10">
-        <Carousel items={mockup} />
-        <section>
+      <div className="h-full p-4">
+        <Header />
+        <main className="w-full h-4/5 flex flex-col gap-10">
+          <Carousel items={mockup} />
           <Cardnews
             thumbnail={''}
             title={'속보) 어쩌구 저쩌구 블라블라'}
             time={'2시간 전'}
             agency={'매일경제'}
           />
-        </section>
-      </main>
+        </main>
+      </div>
       <NavigationBar />
     </div>
   );

@@ -7,7 +7,7 @@ const Header = () => {
   const { month, day, weekday } = getTodayDate();
 
   return (
-    <header>
+    <header className="mb-4">
       <div className="flex flex-row justify-between mb-4">
         <div className="text-xl font-bold">
           {month} {day}일 {}
