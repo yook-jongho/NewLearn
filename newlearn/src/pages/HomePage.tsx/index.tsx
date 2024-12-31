@@ -1,6 +1,7 @@
 import Cardnews from '../../components/cardnews';
 import Carousel from '../../components/carousel/carousel';
 import CategoryLayout from '../../components/categories/categoryLayout';
+import Header from './Header';
 
 const HomePage = () => {
   const mockup = [
@@ -24,18 +25,11 @@ const HomePage = () => {
     },
   ];
   return (
-    <div className="w-full h-full flex flex-col gap-10">
-      <header>
-        <div>
-          <span>12월 29일</span>
-          <button>알람버튼</button>
-        </div>
-        <CategoryLayout layout="home" />
-      </header>
+    <div className="w-full h-full flex flex-col gap-5">
+      <Header />
       <main className="w-full h-4/5 flex flex-col gap-10">
         <Carousel items={mockup} />
         <section>
-          카드뉴스 목록
           <Cardnews
             thumbnail={''}
             title={'속보) 어쩌구 저쩌구 블라블라'}
