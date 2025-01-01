@@ -17,7 +17,7 @@ const Header = () => {
           <Alarm className="mb-0 mt-0 mr-auto ml-auto" />
         </div>
       </div>
-      <CategoryLayout layout="home" />
+      <CategoryLayout />
     </header>
   );
 };

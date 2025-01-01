@@ -1,20 +1,21 @@
 import Cardnews from '../../components/cardnews';
 import CategoryLayout from '../../components/categories/categoryLayout';
+import Category from './Category';
+import Chart from './DonutChart';
+import Header from './Header';
 
 const ProfilPage = () => {
+  const chartData = [
+    { categoryId: 1, percentage: 0.6 },
+    { categoryId: 2, percentage: 0.25 },
+    { categoryId: 3, percentage: 0.15 },
+  ];
+
   return (
     <div>
-      <header>
-        육종호님은 지금까지 <br />
-        <b>총 10개</b>의 기사를 읽었어요!
-      </header>
-      <section>
-        <div> 그래프 </div>
-        <div> 순위 </div>
-      </section>
-      <section>
-        <CategoryLayout layout="profile" />
-      </section>
+      <Header />
+      <Chart data={chartData} />
+      <Category />
       <section>
         <div>
           최근에 읽은 뉴스 <span>* 최신 20개만 저장됩니다.</span>
