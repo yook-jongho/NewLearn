@@ -2,16 +2,9 @@ import { Link, useLocation } from 'react-router';
 import Home from '../assets/home.svg?react';
 import Profile from '../assets/profile.svg?react';
 import Scrap from '../assets/scrap.svg?react';
-import { useState, useEffect } from 'react';
 
 const NavigationBar = () => {
   const location = useLocation();
-  const [crnt, setCrnt] = useState(location.pathname);
-
-  // location.pathname이 변경될 때 crnt 업데이트
-  useEffect(() => {
-    setCrnt(location.pathname);
-  }, [location.pathname]);
 
   const navItems = [
     { path: '/scrap', component: Scrap, label: '스크랩' },
@@ -25,12 +18,12 @@ const NavigationBar = () => {
         <Link to={path} key={path} className="flex flex-col items-center">
           <Icon
             className={`w-6 h-6 ${
-              crnt === path ? 'fill-[#7DAAF3]' : 'fill-gray-400'
+              location.pathname === path ? 'fill-[#7DAAF3]' : 'fill-gray-400'
             }`}
           />
           <span
             className={`text-sm mt-1 ${
-              crnt === path ? 'text-[#7DAAF3]' : 'text-gray-400'
+              location.pathname === path ? 'text-[#7DAAF3]' : 'text-gray-400'
             }`}
           >
             {label}
