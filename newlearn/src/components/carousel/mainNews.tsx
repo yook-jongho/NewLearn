@@ -4,14 +4,14 @@ interface NewsCardProps {
   thumbnail: string; // 뉴스 썸네일 이미지 URL
   title: string; // 뉴스 제목
   time: string;
-  agency: string;
+  source: string;
 }
 
 const MainNews: React.FC<NewsCardProps> = ({
   thumbnail,
   title,
   time,
-  agency,
+  source,
 }) => {
   return (
     <div
@@ -21,7 +21,7 @@ const MainNews: React.FC<NewsCardProps> = ({
       <div className="absolute bottom-0 left-0 w-full rounded-lg bg-gradient-to-t from-black via-transparent to-transparent p-4 text-white">
         <h3 className="text-lg font-bold">{title}</h3>
         <p className="text-sm mt-1 opacity-75">
-          {time}, {agency}
+          {time}, {source}
         </p>
       </div>
     </div>

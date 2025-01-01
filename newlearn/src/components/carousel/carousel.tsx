@@ -7,7 +7,7 @@ type News = {
   thumbnail: string;
   title: string;
   time: string;
-  agency: string;
+  source: string;
 };
 
 interface CarouselProps {
@@ -33,7 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
               thumbnail={item.thumbnail}
               title={item.title}
               time={item.time}
-              agency={item.agency}
+              source={item.source}
             />
           </div>
         ))}
