@@ -1,8 +1,9 @@
-import Cardnews from '../../components/cardnews';
-import CategoryLayout from '../../components/categories/categoryLayout';
+import BasicLayout from '../../layout/basicLayout';
+import CardNews from './CardNews';
 import Category from './Category';
 import Chart from './DonutChart';
 import Header from './Header';
+import data from '../../mockup/latestNewsList.json';
 
 const ProfilPage = () => {
   const chartData = [
@@ -12,20 +13,11 @@ const ProfilPage = () => {
   ];
 
   return (
-    <div>
-      <Header />
+    <BasicLayout headerComponent={<Header />}>
       <Chart data={chartData} />
       <Category />
-      <section>
-        <div>
-          최근에 읽은 뉴스 <span>* 최신 20개만 저장됩니다.</span>
-        </div>
-        <Cardnews thumbnail={''} title={''} time={''} agency={''} />
-        <Cardnews thumbnail={''} title={''} time={''} agency={''} />
-        <Cardnews thumbnail={''} title={''} time={''} agency={''} />
-        <Cardnews thumbnail={''} title={''} time={''} agency={''} />
-      </section>
-    </div>
+      <CardNews newsList={data.data.latestNews} />
+    </BasicLayout>
   );
 };
 

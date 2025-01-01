@@ -87,7 +87,7 @@ const Ranking: React.FC<ChartProps> = ({ data, colors = DEFAULT_COLORS }) => {
 const Chart: React.FC<{ data: ChartData[] }> = ({ data }) => {
   return (
     <div className="w-full flex flex-row items-center justify-around">
-      <DonutChart data={data} size={200} />
+      <DonutChart data={data} size={160} />
       <Ranking data={data} />
     </div>
   );
