@@ -14,8 +14,9 @@ const CardNews: React.FC<NewsData> = ({ newsList }) => {
             key={news.newsId}
             thumbnail={news.thumbnail}
             title={news.title}
-            time={news.publishedDate}
+            publishedDate={news.publishedDate}
             source={news.source}
+            newsId={news.newsId}
           />
         ))}
       </div>
