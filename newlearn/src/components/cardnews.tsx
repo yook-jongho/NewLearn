@@ -1,18 +1,28 @@
+import { useNavigate } from 'react-router';
 import Arrow from '../assets/arrow-right.svg?react';
 import Image from '../assets/image.svg?react';
+import { news } from '../types/news';
 import { hoursSince } from '../utils/timeCalc';
 
-type CardNews = {
-  thumbnail: string;
-  title: string;
-  time: string;
-  source: string;
-};
+const Cardnews = ({
+  thumbnail,
+  title,
+  publishedDate,
+  source,
+  newsId,
+}: news) => {
+  const navigate = useNavigate();
 
-const Cardnews = ({ thumbnail, title, time, source }: CardNews) => {
+  // 특정 라우터로 이동하는 함수
+  const handleNavigation = (newsId: number) => {
+    navigate(`/details/${newsId}`);
+  };
   const commonStyles = 'w-32 bg-[#EAF2FF] rounded-lg';
   return (
-    <div className="h-30 flex flex-row rounded-lg border border-gray-300">
+    <div
+      className="h-30 flex flex-row rounded-lg border border-gray-300"
+      onClick={() => handleNavigation(newsId)}
+    >
       {thumbnail ? (
         <img src={thumbnail} className={commonStyles} />
       ) : (
@@ -23,7 +33,7 @@ const Cardnews = ({ thumbnail, title, time, source }: CardNews) => {
           <span className="inline-block text-sm">{title}</span>
           <div>
             <span className="text-xs text-gray-600">
-              {hoursSince(time)}시간 전, {source}
+              {hoursSince(publishedDate)}시간 전, {source}
             </span>
           </div>
         </div>
