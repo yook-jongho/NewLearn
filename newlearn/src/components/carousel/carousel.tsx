@@ -2,16 +2,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MainNews from './mainNews';
-
-type News = {
-  thumbnail: string;
-  title: string;
-  time: string;
-  source: string;
-};
+import { news } from '../../types/news';
 
 interface CarouselProps {
-  items: News[]; // 이미지 URL 또는 콘텐츠
+  items: news[]; // 개별 뉴스 항목 배열
 }
 
 const Carousel: React.FC<CarouselProps> = ({ items }) => {
@@ -32,7 +26,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
             <MainNews
               thumbnail={item.thumbnail}
               title={item.title}
-              time={item.time}
+              time={item.publishedDate}
               source={item.source}
             />
           </div>
