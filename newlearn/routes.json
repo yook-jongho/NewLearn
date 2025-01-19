@@ -1,3 +1,4 @@
 {
-  "/v1/articles": "/v1/articles"
+  "/api/articles": "/articles",
+  "/api/articles/:id": "/articles/:id"
 }

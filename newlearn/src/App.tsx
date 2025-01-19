@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
 import './App.css';
-import HomePage from './pages/HomePage.tsx';
-import NewsDetailPage from './pages/NewsDetailPage.tsx/index.tsx';
+import HomePage from './pages/HomePage';
+import NewsDetailPage from './pages/NewsDetailPage';
 import ScrapPage from './pages/ScrapPage/index.tsx';
 import ProfilPage from './pages/ProfilePage/index.tsx';
+import LoginPage from './pages/LoginPage/index.tsx';
+import ProtectedRoute from './pages/OauthPage/index.tsx';
 
 function App() {
   return (
@@ -11,10 +13,32 @@ function App() {
       <div className="w-screen h-screen flex-col">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route
+              path="/home"
+              element={
+                <ProtectedRoute>
+                  <HomePage />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/details/:newsId" element={<NewsDetailPage />} />
-            <Route path="/scrap" element={<ScrapPage />} />
-            <Route path="/profile" element={<ProfilPage />} />
+            <Route
+              path="/scrap"
+              element={
+                <ProtectedRoute>
+                  <ScrapPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <ProfilPage />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </BrowserRouter>
       </div>

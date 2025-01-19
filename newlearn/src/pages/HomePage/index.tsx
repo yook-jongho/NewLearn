@@ -7,7 +7,8 @@ import { ApiResponse, news } from '../../types/news';
 import Header from './Header';
 
 const HomePage = () => {
-  const { data, loading, error, request } = useApi<ApiResponse>();
+  const { data, loading, error, request } =
+    useApi<ApiResponse<{ articles: news[] }>>();
 
   // 데이터 요청
   useEffect(() => {

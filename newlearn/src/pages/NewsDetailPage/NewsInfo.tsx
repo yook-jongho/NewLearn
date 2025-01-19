@@ -1,15 +1,9 @@
 import { hoursSince } from '../../utils/timeCalc';
 import Bookmark from '../../assets/bookmark-line.svg?react';
 import Link from '../../assets/links-line.svg?react';
+import { NewsDetail } from '../../types/news';
 
-type NewsInfoProps = {
-  title: string;
-  publishedDate: string;
-  source: string;
-  content: string;
-};
-
-const NewsInfo: React.FC<NewsInfoProps> = ({
+const NewsInfo: React.FC<NewsDetail> = ({
   title,
   publishedDate,
   source,
