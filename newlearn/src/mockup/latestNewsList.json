@@ -1,0 +1,27 @@
+{
+  "data": {
+    "latestNews": [
+      {
+        "newsId": 101,
+        "title": "Latest AI breakthrough",
+        "source": "TechTimes",
+        "publishedDate": "2024-12-31T23:00:00Z",
+        "thumbnail": "https://url.kr/qsyxm9"
+      },
+      {
+        "newsId": 102,
+        "title": "Tech company announces new gadget",
+        "source": "GadgetWorld",
+        "publishedDate": "2024-12-31T23:30:00Z",
+        "thumbnail": "https://url.kr/qsyxm9"
+      },
+      {
+        "newsId": 103,
+        "title": "Breakthrough in renewable energy",
+        "source": "EnergyDaily",
+        "publishedDate": "2024-12-31T23:15:00Z",
+        "thumbnail": "https://url.kr/qsyxm9"
+      }
+    ]
+  }
+}
